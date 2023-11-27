@@ -115,6 +115,9 @@
     /* padding: 0.2rem 0; */
   }
   .filter-modal{
+    display: none;
+  }
+  .filter-modal-active{
     display: flex;
     justify-content: center;
     align-items: center;
