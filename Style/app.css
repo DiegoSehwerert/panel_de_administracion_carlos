@@ -114,7 +114,36 @@
     margin-bottom: 2rem;
     /* padding: 0.2rem 0; */
   }
-  
+  .filter-modal{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
+    z-index: 1;
+  }
+  .filter-modal-content{
+    background-color: lightblue;
+    padding: 2rem 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    z-index: 2;
+  }
+  .filter-modal-buttons{
+    background-color: lightgreen;
+    box-sizing: border-box;
+    padding-top: 0.2rem; 
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 5rem ;
+  }
   .filter-button button svg {
     width: 2rem;
     padding-left: 0.2rem;
