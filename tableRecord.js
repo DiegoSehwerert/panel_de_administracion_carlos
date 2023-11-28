@@ -1,20 +1,20 @@
 export default (() => {
     
-    const tableSection = document.querySelector('.table-record');
+    const tableSection = document.querySelector('.table');
+    const deleteButtonModalDenny = document.querySelector(".denny-button");
     
     tableSection?.addEventListener('click', async (event) => {
         
         if (event.target.closest('.delete-button')) {
 
-            const deleteButtonModal = document.querySelector(".delete-button-modal");
-            const deleteButtonModalDenny = document.querySelector(".denny-button")
-
-            deleteButtonModal.classList.add("delete-button-modal-active");
-
-            deleteButtonModalDenny?.addEventListener("click", () => {
-                deleteButtonModal.classList.remove("delete-button-modal-active");
-            })
-
+            const deleteModal = document.querySelector(".delete-modal");
+            deleteModal.classList.add("delete-modal-active");
         }
+    })
+
+
+    deleteButtonModalDenny?.addEventListener("click", () => {
+        const deleteModal = document.querySelector(".delete-modal");
+        deleteModal.classList.remove("delete-modal-active");
     })
 })();

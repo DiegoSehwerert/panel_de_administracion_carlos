@@ -247,11 +247,11 @@ header {
   fill: hsl(34, 79%, 53%);
 }
 
-.delete-button-modal {
+.delete-modal {
   display: none;
 }
 
-.delete-button-modal-active {
+.delete-modal-active {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -265,7 +265,7 @@ header {
   z-index: 3;
 }
 
-.delete-button-modal-content {
+.delete-modal-content {
   background-color: hsl(212, 48%, 45%);
   padding: 2rem 0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -276,7 +276,7 @@ header {
   z-index: 4;
 }
 
-.delete-button-modal-content-buttons {
+.delete-modal-content-buttons {
   box-sizing: border-box;
   padding-top: 1rem;
   display: flex;
