@@ -1,288 +1,397 @@
 * {
-    margin: 0;
-    padding: 0;
-  }
-  
-  button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-  }
-  
-  a {
-    text-decoration: none;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    color: hsl(0, 0%, 100%);
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  input, label, select, textarea, li, span, p {
-    color: hsl(0, 0%, 100%);
-    font-family: 'Roboto', sans-serif;
-  }
-  
-  body {
-    background-color: hsl(226, 63%, 45%);
-    margin: 0 auto;
-    width: 90%;
-  }
-  
-  header {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    padding: 1.5rem 0;
-  }
-  
-  .menu  {
-    background-color: hsl(207, 85%, 69%);    
-    height: 100vh;
-    transition: all 0.5s;
-    left: 0;
-    top: -100vh;
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-  }
+  margin: 0;
+  padding: 0;
+}
 
-  .menu-active{
-    top: 0; 
-  }
-  
-  
-  .menu-button {
-      position: relative;
-    z-index: 2;
-  }
-  
-  .menu-button svg {
-    width: 3rem;
-  }
-  
-  .menu-button .line {
-    fill: none;
-    stroke: hsl(0, 0%, 100%);
-    stroke-width: 6;
-    transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Roboto', sans-serif;
+}
+
+input,
+label,
+select,
+textarea,
+li,
+span,
+p {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: hsl(226, 63%, 45%);
+  margin: 0 auto;
+  width: 90%;
+}
+
+header {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+}
+
+.menu {
+  background-color: hsl(207, 85%, 69%);
+  height: 100vh;
+  transition: all 0.5s;
+  left: 0;
+  top: -100vh;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.menu-active {
+  top: 0;
+}
+
+
+.menu-button {
+  position: relative;
+  z-index: 2;
+}
+
+.menu-button svg {
+  width: 3rem;
+}
+
+.menu-button .line {
+  fill: none;
+  stroke: hsl(0, 0%, 100%);
+  stroke-width: 6;
+  transition: stroke-dasharray 600ms cubic-bezier(0.4, 0, 0.2, 1),
     stroke-dashoffset 600ms cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  
-  .menu-button .top-line {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
-  }
-  
-  .menu-button .middle-line {
-    stroke-dasharray: 60 60;
-    stroke-width: 6;
-  }
-  
-  .menu-button .bottom-line {
-    stroke-dasharray: 60 207;
-    stroke-width: 6;
-  }
-  
-  .menu-button.active .top-line {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 6;
-  }
-  
-  .menu-button.active .middle-line {
-    stroke-dasharray: 1 60;
-    stroke-dashoffset: -30;
-    stroke-width: 6;
-  }
-  
-  .menu-button.active .bottom-line {
-    stroke-dasharray: 90 207;
-    stroke-dashoffset: -134;
-    stroke-width: 6;
-  }
-  
-  .filter {
-    /* align-items: center; */
-    background-color: hsl(0, 0%, 100%);
-    display: flex;
-    justify-content: flex-start;
-    margin-bottom: 2rem;
-    /* padding: 0.2rem 0; */
-  }
-  .filter-modal{
-    display: none;
-  }
-  .filter-modal-active{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo translúcido */
-    z-index: 1;
-  }
-  .filter-modal-content{
-    background-color: lightblue;
-    padding: 2rem 0;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
-    text-align: center;
-    box-sizing: border-box;
-    z-index: 2;
-  }
-  .filter-modal-buttons{
-    background-color: lightgreen;
-    box-sizing: border-box;
-    padding-top: 0.2rem; 
-    display: flex;
-    justify-content: space-between;
-    padding-inline: 5rem ;
-  }
-  .filter-button button svg {
-    width: 2rem;
-    padding-left: 0.2rem;
-  }
-  
-  .filter-button button svg path {
-    fill: hsl(207, 85%, 69%);
-  }
-  
-  .filter-button button:hover svg path {
-    fill: hsl(34, 79%, 53%);
-  }
-  
-  .crud {
-    display: flex;
-    gap: 5%;
-    justify-content: space-between;
-  }
-  
-  .table {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .table-buttons {
-    background-color: hsl(207, 85%, 69%);
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-  }
-  
-  .edit-button button svg,
-  .delete-button button svg {
-    width: 2rem;
-  }
-  
-  .edit-button button svg path,
-  .delete-button button svg path {
-    fill: hsl(0, 0%, 100%);
-  }
-  
-  .edit-button button:hover svg path,
-  .delete-button button:hover svg path {
-    fill: hsl(34, 79%, 53%);
-  }
-  
-  .table-data {
-    background-color: hsl(226, 64%, 66%);
-    padding: 0.5rem;
-  }
-  
-  .table-data ul {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  
-  .table-data ul li span {
-    font-weight: 700;
-  }
-  
-  .table-data ul li span::after {
-    content: ":";
-    margin-right: 0.5rem;
-  }
-  
-  .form {
-    flex: 2;
-  }
-  
-  .form-buttons {
-    background-color: hsl(0, 0%, 100%);
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-    padding-right: 0.5rem;
-  }
-  
-  .form-clean-button button svg,
-  .form-save-button button svg {
-    width: 2rem;
-  }
-  
-  .form-clean-button button svg path,
-  .form-save-button button svg path {
-    fill: hsl(207, 85%, 69%);
-  }
-  
-  .form-clean-button button:hover svg path,
-  .form-save-button button:hover svg path {
-    fill: hsl(34, 79%, 53%);
-  }
-  
-  .form-row {
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .form-element {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: 1rem;
-  }
-  
-  .form-element-label label {
-    font-weight: 700;
-  }
-  
-  .form-element-input * {
-    background-color: hsl(226, 64%, 66%);
-    border: none;
-    box-sizing: border-box;
-    font-size: 1rem;
-    height: 2rem;
-    outline: transparent;
-    padding: 0.5rem;
-    width: 100%;
-  }
-  
-  .form-element-input input[type="number"]::-webkit-outer-spin-button,
-  .form-element-input input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-  }
-  
-  .form-element-input input[type="date"]::-webkit-calendar-picker-indicator,
-  .form-element-input input[type="time"]::-webkit-calendar-picker-indicator {
-    filter: invert(1);
-  }
-  
-  .form-element-input textarea{
-    height: 20vh;
-    resize: none;
-  }
+}
+
+.menu-button .top-line {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.menu-button .middle-line {
+  stroke-dasharray: 60 60;
+  stroke-width: 6;
+}
+
+.menu-button .bottom-line {
+  stroke-dasharray: 60 207;
+  stroke-width: 6;
+}
+
+.menu-button.active .top-line {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.menu-button.active .middle-line {
+  stroke-dasharray: 1 60;
+  stroke-dashoffset: -30;
+  stroke-width: 6;
+}
+
+.menu-button.active .bottom-line {
+  stroke-dasharray: 90 207;
+  stroke-dashoffset: -134;
+  stroke-width: 6;
+}
+
+.filter {
+  /* align-items: center; */
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+  /* padding: 0.2rem 0; */
+}
+
+.filter-modal {
+  display: none;
+}
+
+.filter-modal-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo translúcido */
+  z-index: 3;
+}
+
+.filter-modal-content {
+  background-color: hsl(212, 48%, 45%);
+  padding: 2rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 4;
+}
+
+.filter-modal-form {
+  /* background-color: red; */
+  box-sizing: border-box;
+  text-align: left;
+  padding: 0 2rem;
+}
+
+.filter-modal-form input {
+  background-color: rgb(93, 159, 190);
+  /* padding: 0 2rem; */
+  border-bottom: 2px solid white;
+  ;
+
+}
+
+.filter-modal-buttons {
+  /* background-color: lightgreen; */
+  box-sizing: border-box;
+  padding-top: 0.2rem;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 5rem;
+}
+
+.filter-modal-accept-button {
+  background-color: rgba(0, 128, 0, 0.829);
+  border: 2px solid white;
+}
+
+.filter-modal-accept-button button {
+  width: 6rem;
+  height: 2rem;
+}
+
+.filter-modal-decline-button {
+  background-color: #d74242;
+  border: 2px solid white;
+}
+
+.filter-modal-decline-button button {
+  width: 6rem;
+  height: 2rem;
+}
+
+.filter-button button svg {
+  width: 2rem;
+  padding-left: 0.2rem;
+}
+
+.filter-button button svg path {
+  fill: hsl(207, 85%, 69%);
+}
+
+.filter-button button:hover svg path {
+  fill: hsl(34, 79%, 53%);
+}
+
+.crud {
+  display: flex;
+  gap: 5%;
+  justify-content: space-between;
+}
+
+.table {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.table-buttons {
+  background-color: hsl(207, 85%, 69%);
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.edit-button button svg,
+.delete-button button svg {
+  width: 2rem;
+}
+
+.edit-button button svg path,
+.delete-button button svg path {
+  fill: hsl(0, 0%, 100%);
+}
+
+.edit-button button:hover svg path,
+.delete-button button:hover svg path {
+  fill: hsl(34, 79%, 53%);
+}
+
+.delete-button-modal {
+  display: none;
+}
+
+.delete-button-modal-active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo translúcido */
+  z-index: 3;
+}
+
+.delete-button-modal-content {
+  background-color: hsl(212, 48%, 45%);
+  padding: 2rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  z-index: 4;
+}
+
+.delete-button-modal-content-buttons {
+  box-sizing: border-box;
+  padding-top: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-inline: 5rem;
+}
+
+.submit-button {
+  background-color: rgba(0, 128, 0, 0.829);
+  border: 2px solid white;
+}
+
+.submit-button button {
+  width: 6rem;
+  height: 2rem;
+}
+
+.denny-button {
+  background-color: #d74242;
+  border: 2px solid white;
+}
+
+.denny-button button {
+  width: 6rem;
+  height: 2rem;
+}
+
+.table-data {
+  background-color: hsl(226, 64%, 66%);
+  padding: 0.5rem;
+}
+
+.table-data ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.table-data ul li span {
+  font-weight: 700;
+}
+
+.table-data ul li span::after {
+  content: ":";
+  margin-right: 0.5rem;
+}
+
+.form {
+  flex: 2;
+}
+
+.form-buttons {
+  background-color: hsl(0, 0%, 100%);
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+.form-clean-button button svg,
+.form-save-button button svg {
+  width: 2rem;
+}
+
+.form-clean-button button svg path,
+.form-save-button button svg path {
+  fill: hsl(207, 85%, 69%);
+}
+
+.form-clean-button button:hover svg path,
+.form-save-button button:hover svg path {
+  fill: hsl(34, 79%, 53%);
+}
+
+.form-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.form-element {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-element-label label {
+  font-weight: 700;
+}
+
+.form-element-input * {
+  background-color: hsl(226, 64%, 66%);
+  border: none;
+  box-sizing: border-box;
+  font-size: 1rem;
+  height: 2rem;
+  outline: transparent;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.form-element-input input[type="number"]::-webkit-outer-spin-button,
+.form-element-input input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-element-input input[type="date"]::-webkit-calendar-picker-indicator,
+.form-element-input input[type="time"]::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
+.form-element-input textarea {
+  height: 20vh;
+  resize: none;
+}
