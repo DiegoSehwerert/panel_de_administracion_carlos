@@ -335,37 +335,34 @@ header {
   margin-bottom: 1rem;
   padding-right: 0.5rem;
 }
-.form-change-menu{
+.tabs{
   /* background-color: #d74242; */
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
 }
-.form-change-menu button{
+.tabs button{
   /* background-color:grey; */
   height: 2.2rem; 
-  padding: 0 2rem;
-  
+  padding: 0 2rem; 
+}
+
+.tab.active{
+  background-color: rgb(41, 182, 182);
+}
+
+.tab button p{
+  color: hsl(183.09, 97.77%, 35.1%);
+}
+.tab.active button p{
+  color: white;
 }
 .form-savedelete-data{
   display: flex;
   gap: 0.5rem;
 }
-.form-main-button.active{
-  background-color: aqua;
-}
-.form-images-button.active{
-  background-color: aqua;
-}
-.form-git-button.active{
-  background-color: aqua;
-}
-.form-main-button button p,
-.form-images-button button p,
-.form-git-button button p {
-  color: hsl(183.09, 97.77%, 35.1%);
-}
+
 
 .form-clean-button button svg,
 .form-save-button button svg {
