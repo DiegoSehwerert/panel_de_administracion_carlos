@@ -331,10 +331,40 @@ header {
 .form-buttons {
   background-color: hsl(0, 0%, 100%);
   display: flex;
-  gap: 0.5rem;
-  justify-content: flex-end;
+  justify-content:space-between;
   margin-bottom: 1rem;
   padding-right: 0.5rem;
+}
+.form-change-menu{
+  /* background-color: #d74242; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+.form-change-menu button{
+  /* background-color:grey; */
+  height: 2.2rem; 
+  padding: 0 2rem;
+  
+}
+.form-savedelete-data{
+  display: flex;
+  gap: 0.5rem;
+}
+.form-main-button.active{
+  background-color: aqua;
+}
+.form-images-button.active{
+  background-color: aqua;
+}
+.form-git-button.active{
+  background-color: aqua;
+}
+.form-main-button button p,
+.form-images-button button p,
+.form-git-button button p {
+  color: hsl(183.09, 97.77%, 35.1%);
 }
 
 .form-clean-button button svg,
