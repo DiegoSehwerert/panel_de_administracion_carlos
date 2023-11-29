@@ -6,10 +6,8 @@ export default (() => {
     // const acceptButton = document.querySelector("")
 
     Button?.addEventListener("click", () => {
-        modal.classList.add("filter-modal-active");
-    })
-    declineButton?.addEventListener("click", () => {
-        modal.classList.remove("filter-modal-active");
+        document.dispatchEvent(new CustomEvent('showModalFilter', {
+        }));
     })
     // modalBottom?.addEventListener("click", () => {
     //     modal.classList.remove("filter-modal-active");
