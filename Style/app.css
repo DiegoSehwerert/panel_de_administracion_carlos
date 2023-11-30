@@ -378,6 +378,18 @@ header {
 .form-save-button button:hover svg path {
   fill: hsl(34, 79%, 53%);
 }
+.tab-content {
+  display: none;
+}
+.tab-content .active{
+  display: flex;
+}
+.active {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 0.5rem;
+}
 
 .form-row {
   display: flex;
@@ -405,6 +417,9 @@ header {
   outline: transparent;
   padding: 0.5rem;
   width: 100%;
+}
+.validate.active{
+  border-bottom: 2px solid #d74242;
 }
 
 .form-element-input input[type="number"]::-webkit-outer-spin-button,
