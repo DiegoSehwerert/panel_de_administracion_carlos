@@ -1,18 +1,29 @@
 export default (() => {
-    let input = document.querySelector(".validate");
-    let minLenght = input.dataset.minlength;
-    let c = console.log;
-    c();
+
+    const form = document.querySelector('.form');
     
-    input?.addEventListener('input', (event) => {
-      let inputLength = event.target.value;
-      console.log(inputLength); // Corregido: imprime el valor del input
-      if (inputLength.length < minLenght && inputLength.length > 0) {
-        
-        input.classList.add("active");
-      }else{
-        input.classList.remove("active");
+    form?.addEventListener('input', (event) => {
+
+      if(event.target.closest('[data-minlength]')){
+        let input = event.target.closest('[data-minlength]');
+
+        if (input.value.length < input.dataset.minlength && input.value.length > 0) {
+          input.classList.add("active");
+        }else{
+          input.classList.remove("active");
+        }
       }
+
+      if(event.target.closest('[data-onlyletters]')){
+        let input = event.target.closest('[data-onlyletters');
+        // console.log(input.value);
+        if (/^[a-zA-Z]+$/.test(input.value)){
+          input.classList.remove("active");
+        }else{
+          input.classList.add("active");
+        }
+      }
+    
     });
   
   })();
