@@ -117,7 +117,7 @@ header {
   stroke-width: 6;
 }
 
-.filter {
+.table-buttons {
   /* align-items: center; */
   background-color: hsl(0, 0%, 100%);
   display: flex;
@@ -198,16 +198,16 @@ header {
   width: 6rem;
   height: 2rem;
 }
-.filter-button button svg {
+.table-button button svg {
   width: 2rem;
   padding-left: 0.2rem;
 }
 
-.filter-button button svg path {
+.table-button button svg path {
   fill: hsl(207, 85%, 69%);
 }
 
-.filter-button button:hover svg path {
+.table-button button:hover svg path {
   fill: hsl(34, 79%, 53%);
 }
 
@@ -224,7 +224,7 @@ header {
   gap: 1rem;
 }
 
-.table-buttons {
+.table-record-buttons {
   background-color: hsl(207, 85%, 69%);
   display: flex;
   gap: 0.5rem;

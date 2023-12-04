@@ -34,15 +34,6 @@ class Title extends HTMLElement {
         <h1>${this.title}</h1>
       </div>
       `
-
-
-        this.shadow.querySelector('.title').addEventListener('click', () => {
-            this.alertMessage()
-        })
-    }
-
-    alertMessage() {
-        alert('Hello World')
     }
 }
 

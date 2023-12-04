@@ -26,6 +26,7 @@
     <title-menu></title-menu>
   </header>
   <main>
+    <filter-component></filter-component>
     <div class="delete-modal">
       <div class="delete-modal-content">
         <p>Estas seguro de que quieres eliminar este registro?</p>
@@ -45,44 +46,8 @@
     </div>
     <div class="crud">
       <section class="table">
-        <div class="filter-modal">
-          <div class="filter-modal-content">
-            <div class="filter-modal-form">
-              <form action="">
-                <div class="form-element">
-                  <div class="form-element-label">
-                    <label for="Name">Nombre</label>
-                  </div>
-                  <div class="form-element-input">
-                    <input type="text">
-                  </div>
-                </div>
-                <div class="form-element">
-                  <div class="form-element-label">
-                    <label for="Email">Email</label>
-                  </div>
-                  <div class="form-element-input">
-                    <input type="email">
-                  </div>
-                </div>
-              </form>
-            </div>
-            <div class="filter-modal-buttons">
-              <div class="filter-modal-accept-button">
-                <button>
-                  <span>accept</span>
-                </button>
-              </div>
-              <div class="filter-modal-decline-button">
-                <button>
-                  <span>decline</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <article class="filter">
-          <div class="filter-button">
+        <div class="table-buttons">
+          <div class="table-button filter-button">
             <button>
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                 <title>filter-menu</title>
@@ -91,9 +56,9 @@
               </svg>
             </button>
           </div>
-        </article>
+        </div>
         <article class="table-record">
-          <div class="table-buttons">
+          <div class="table-record-buttons">
             <div class="edit-button">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -119,7 +84,7 @@
           </div>
         </article>
         <article class="table-record">
-          <div class="table-buttons">
+          <div class="table-record-buttons">
             <div class="edit-button">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -144,7 +109,7 @@
           </div>
         </article>
         <article class="table-record">
-          <div class="table-buttons">
+          <div class="table-record-buttons">
             <div class="edit-button">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -169,7 +134,7 @@
           </div>
         </article>
         <article class="table-record">
-          <div class="table-buttons">
+          <div class="table-record-buttons">
             <div class="edit-button">
               <button>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
