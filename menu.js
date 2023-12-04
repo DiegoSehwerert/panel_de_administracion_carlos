@@ -22,6 +22,11 @@ class Title extends HTMLElement {
         this.shadow.innerHTML =
             `
       <style>
+      button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+      }
       .menu {
         background-color: hsl(207, 85%, 69%);
         height: 100vh;
@@ -81,6 +86,12 @@ class Title extends HTMLElement {
         stroke-dashoffset: -30;
         stroke-width: 6;
       }
+      
+      .menu-button.active .bottom-line {
+        stroke-dasharray: 90 207;
+        stroke-dashoffset: -134;
+        stroke-width: 6;
+      }
       </style>
       <div class="top-bar-menu">
       <div class="menu">
@@ -97,15 +108,17 @@ class Title extends HTMLElement {
       </button>
     </div>
       `
+    
 
-
-        this.shadow.querySelector('.title').addEventListener('click', () => {
-            this.alertMessage()
-        })
-    }
-
-    alertMessage() {
-        alert('Hello World')
+    const menuButton = this.shadow.querySelector(".menu-button");
+    const menu = this.shadow.querySelector(".menu");
+  
+      menuButton?.addEventListener("click", () => {
+ 
+        menuButton.classList.toggle("active");
+        menu.classList.toggle("menu-active");
+      
+      })
     }
 }
 
