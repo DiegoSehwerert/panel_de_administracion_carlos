@@ -7,17 +7,12 @@ class Tabs extends HTMLElement {
     }
 
     connectedCallback() {
-
-
-        document.addEventListener("showModalDestroy", (event => {
-            this.openModal();
-        }));
         this.render()
     }
 
     render() {
         this.shadow.innerHTML =
-        `<style>
+        /*html*/`<style>
             * {
             margin: 0;
             padding: 0;
@@ -109,6 +104,26 @@ class Tabs extends HTMLElement {
               .form-save-button button:hover svg path {
                 fill: hsl(34, 79%, 53%);
               }
+              .form-save-button-notification{
+                display:none
+              }
+              .form-save-button-notification .active {
+              position: absolute;
+              }
+
+              .notification {
+              position: absolute;
+              bottom: 10px;
+              right: 10px;
+              padding: 10px;
+              background-color: #fff;
+              border-radius: 5px;
+              animation: fadeInOut 2s ease-in-out;
+              }
+              .notification-content-span span{
+                color: #000;
+              }
+
               .tab-content {
                 display: none;
               }
@@ -183,8 +198,9 @@ class Tabs extends HTMLElement {
                 </button>
                 </div>
             </div>
+            
             <div class="form-savedelete-data">
-                <div class="form-clean-button">
+              <div class="form-clean-button">
                 <button>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <title>broom</title>
@@ -192,6 +208,15 @@ class Tabs extends HTMLElement {
                         d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" />
                     </svg>
                 </button>
+                </div>
+                <div class= "form-save-button-notification">
+                  <div class= "notification">
+                    <div class= "notification-content">
+                      <div class= "notification-content-span">
+                        <span>Muy Buena crack lo has guardado eres una bestia mi loko<span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="form-save-button">
                 <button>
@@ -202,7 +227,7 @@ class Tabs extends HTMLElement {
                     </svg>
                 </button>
                 </div>
-            </div>
+              </div>
             </div>
 
             <form>
@@ -271,9 +296,10 @@ class Tabs extends HTMLElement {
         </section>
       `
     
-        const allTabs = document.querySelector('.tabs');
-        const tabContents = document.querySelectorAll('.tab-content');
-        const form = document.querySelector('.form');
+        const allTabs = this.shadow.querySelector('.tabs');
+        const tabContents = this.shadow.querySelectorAll('.tab-content');
+        const form = this.shadow.querySelector('.form');
+        // const deleteAndSaveButtons
         allTabs.addEventListener("click", (event) => {
 
             if (event.target.closest('.tab')) {
