@@ -194,9 +194,3 @@ class Filter extends HTMLElement {
 }
 
 customElements.define('filter-component', Filter);
-
-
-
-
-
-
