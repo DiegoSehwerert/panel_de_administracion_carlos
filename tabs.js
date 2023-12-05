@@ -199,6 +199,15 @@ class Tabs extends HTMLElement {
                 </div>
             </div>
             
+            <div class= "form-save-button-notification">
+              <div class= "notification">
+                <div class= "notification-content">
+                  <div class= "notification-content-span">
+                    <span>Muy Buena crack lo has guardado eres una bestia mi loko<span>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div class="form-savedelete-data">
               <div class="form-clean-button">
                 <button>
@@ -208,15 +217,6 @@ class Tabs extends HTMLElement {
                         d="M19.36,2.72L20.78,4.14L15.06,9.85C16.13,11.39 16.28,13.24 15.38,14.44L9.06,8.12C10.26,7.22 12.11,7.37 13.65,8.44L19.36,2.72M5.93,17.57C3.92,15.56 2.69,13.16 2.35,10.92L7.23,8.83L14.67,16.27L12.58,21.15C10.34,20.81 7.94,19.58 5.93,17.57Z" />
                     </svg>
                 </button>
-                </div>
-                <div class= "form-save-button-notification">
-                  <div class= "notification">
-                    <div class= "notification-content">
-                      <div class= "notification-content-span">
-                        <span>Muy Buena crack lo has guardado eres una bestia mi loko<span>
-                      </div>
-                    </div>
-                  </div>
                 </div>
                 <div class="form-save-button">
                 <button>
@@ -299,7 +299,7 @@ class Tabs extends HTMLElement {
         const allTabs = this.shadow.querySelector('.tabs');
         const tabContents = this.shadow.querySelectorAll('.tab-content');
         const form = this.shadow.querySelector('.form');
-        // const deleteAndSaveButtons
+        const deleteButton = this.shadow.querySelector('form-save-button');
         allTabs.addEventListener("click", (event) => {
 
             if (event.target.closest('.tab')) {
@@ -318,6 +318,14 @@ class Tabs extends HTMLElement {
                 })
             }
         })
+        deleteButton.addEventListener("click", () => {
+          deleteButton.classList.add("active");
+
+        })
+        setTimeout(() => {
+            
+        })
+
     
         form.addEventListener('input', (event) => {
     
