@@ -31,7 +31,7 @@ class UploadImageButton extends HTMLElement {
           padding: 0.5rem;
           width: 10rem; 
         }
-        .bo:hover {
+        .box:hover {
           cursor: pointer;
           box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
         }

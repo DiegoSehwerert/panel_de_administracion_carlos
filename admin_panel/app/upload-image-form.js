@@ -16,6 +16,14 @@ class UploadImageForm extends HTMLElement {
     this.shadow.innerHTML = /* html */
     `
     <style>
+      textarea {
+        resize: none;
+      }
+      .head-title {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+      }
       .box {
         display: none;
         position: fixed;
@@ -23,7 +31,7 @@ class UploadImageForm extends HTMLElement {
         right: 0;
         bottom: 0;
         left: 0;
-        background-color: rgba(255, 255, 255, 0.8); /* Adjust opacity as needed */
+        background-color: rgba(255, 255, 255, 0.8);
         z-index: 3;
       }
       .box.active {
@@ -32,7 +40,7 @@ class UploadImageForm extends HTMLElement {
         justify-content: center;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.4); /* Adjust the opacity as needed */
+        background-color: rgba(0, 0, 0, 0.4);
       }
       .gallery {
         width: 80%;
@@ -40,6 +48,7 @@ class UploadImageForm extends HTMLElement {
         background-color: #fff;
       }
       .form {
+        border-bottom: 1px solid #ccc;
         flex: 2;
       }
 
@@ -49,8 +58,6 @@ class UploadImageForm extends HTMLElement {
           background-color: white;
           height: 3rem;
           width: 100%;
-          margin-bottom: 2rem;
-
       }
       .tabs{
           display: flex;
@@ -71,16 +78,17 @@ class UploadImageForm extends HTMLElement {
       }
 
       .tab button{
-          color: blue;
+        background: none;
+        border: none;
+        color: black;
       }
 
       .tab.active button{
-          color: white;
+          color: black;
       }
 
       .tab.active{
-          background-color: #e69428;
-          color: white;
+          color: black;
       }
 
       .tab-contents{
@@ -98,80 +106,127 @@ class UploadImageForm extends HTMLElement {
 
       .form-row{
         display: flex;
-        flex-direction: column;
         gap: 1rem;
+        margin: 1rem 0.5rem;
       }
 
       .form-element {
         display: flex;
+        justify-content: flex-start;
         flex-direction: column;
         gap: 0.5rem;
-        margin-bottom: 1rem;
+        margin: 1rem 0.5rem;
         width: 100%;
       }
 
       .form-element-input * {
-        background-color: #718be0;
         border: none;
         box-sizing: border-box;
-        font-size: 1rem;
         outline: transparent;
-        padding: 0.5rem;
-        width: 100%;
+        width: 50%;
+      }
+      .form-element-input input {
+        border: 1px solid #ccc;
+      }
+      .form-element-input textarea {
+        border: 1px solid #ccc;
+      }
+      .avatar{
+        width: 4rem;
+        height: 4rem;
+        border-radius: 50%;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
       }
       </style>
           <div class="box">
             <div class="gallery">
-              <div class="form">
-                <div class="form-top-bar">
-                  <div class="tabs">
-                    <div class="tab active" data-tab="general">
-                      <button>
-                        General
-                      </button>
-                    </div>
-                    <div class="tab" data-tab="images">
-                      <button>
-                        Imágenes
-                      </button>
-                    </div>
-                  </div>
-                </div>
+              <div class="head-title">
+                <h1>Subir imágenes</h1>
               </div>
-              <form class="admin-form">
-                <input type="hidden" name="id" value="">
-                <div class="tab-contents">
-                  <div class="tab-content active" data-tab="general">
-                    <div class="form-row">
-                      <div class="form-element">
-                        <div class="form-element-label">
-                          <label for="question">
-                            Pregunta
-                          </label>
-                        </div>
-                        <div class="form-element-input">
-                          <input type="text" name="name" value="">
-                        </div>
+              <div class="body">
+                <div class="form">
+                  <div class="form-top-bar">
+                    <div class="tabs">
+                      <div class="tab active" data-tab="general">
+                        <button>
+                          General
+                        </button>
                       </div>
-                    </div>
-                  </div>
-                  <div class="tab-content" data-tab="images">
-                    <div class="form-row">
-                      <div class="form-element">
-                        <div class="form-element-label">
-                          <label for="upload-images">
-                            Imagenes
-                          </label>
-                        </div>
-                        <div class="form-element-input">
-                          <input type="file" name="images" value="">
-                          <button type="button" class="upload-image-button">
-                        </div>
+                      <div class="tab" data-tab="images">
+                        <button>
+                          Subir imágenes
+                        </button>
                       </div>
                     </div>
                   </div>
                 </div>
-              </form>
+                <form class="admin-form">
+                  <input type="hidden" name="id" value="">
+                  <div class="tab-contents">
+                    <div class="tab-content active" data-tab="general">
+                      <div class="form-row">
+                        <div class="avatar">
+                          <p>A</p>
+                        </div>
+                        <div class="avatar">
+                          <p>B</p>
+                        </div>
+                        <div class="avatar">
+                          <p>C</p>
+                        </div>
+                        <div class="avatar">
+                          <p>D</p>
+                        </div>  
+                      </div>
+                      <div class="side-panel">
+                        <div class="form-row">
+                          <div class="form-element">
+                            <div class="form-element-label">
+                              <label for="name">
+                                Nombre
+                              </label>
+                            </div>
+                            <div class="form-element-input">
+                              <input type="text" name="name" value="">
+                            </div>
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-element">
+                            <div class="form-element-label">
+                              <label for="description">
+                                Descripción
+                              </label>
+                            </div>
+                            <div class="form-element-input">
+                              <textarea name="description" rows="8" cols="80"></textarea>
+                            </div>
+                          </div>
+                        </div>
+                       </div>
+                      </div>
+                    </div>
+                    <div class="tab-content" data-tab="images">
+                      <div class="form-row">
+                        <div class="form-element">
+                          <div class="form-element-label">
+                            <label for="upload-images">
+                              Imagenes
+                            </label>
+                          </div>
+                          <div class="form-element-input">
+                            <input type="file" name="images" value="">
+                            <button type="button" class="upload-image-button">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
     `;
