@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="./Style/app.css">
+  <link rel="stylesheet" href="./style/app.css">
   <script type="module" src="./app/app.js"></script>
 </head>
 
@@ -33,7 +33,16 @@
         <table-component></table-component>
       </section>
       <section class="form">
-        <tabs-component></tabs-component>
+        <form-component>
+          <upload-image-button
+            slot="upload-es-image-button">
+          </upload-image-button>
+          <upload-image-button
+            slot="upload-en-image-button">
+          </upload-image-button>
+        </form-component>
+        <upload-image-form>
+        </upload-image-form>
       </section>
     </div>
   </main>
