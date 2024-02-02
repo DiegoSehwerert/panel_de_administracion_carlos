@@ -16,8 +16,21 @@ class UploadImageForm extends HTMLElement {
     this.shadow.innerHTML = /* html */
     `
     <style>
+      * {
+        box-sizing: border-box;
+      }
       textarea {
         resize: none;
+      }
+      .head-close {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .close-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        position: absolute;
       }
       .head-title {
         align-items: center;
@@ -100,14 +113,31 @@ class UploadImageForm extends HTMLElement {
         display: block;
       }
 
+      .tab-content.active[data-tab="general"] {
+        display: flex;
+        justify-content: space-between;
+      }
+      .container{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+
+      .side-panel{
+        background-color: #f5f5f5;
+        min-height: 35rem;
+        width: 500px;
+      }
+
       .tab-content{
         display: none;
       }
 
       .form-row{
         display: flex;
-        gap: 1rem;
+        gap: 0 1rem;
         margin: 1rem 0.5rem;
+        flex-wrap: wrap;
       }
 
       .form-element {
@@ -116,14 +146,14 @@ class UploadImageForm extends HTMLElement {
         flex-direction: column;
         gap: 0.5rem;
         margin: 1rem 0.5rem;
-        width: 100%;
+        width: 90%;
       }
 
       .form-element-input * {
         border: none;
         box-sizing: border-box;
         outline: transparent;
-        width: 50%;
+        width: 100%;
       }
       .form-element-input input {
         border: 1px solid #ccc;
@@ -131,6 +161,12 @@ class UploadImageForm extends HTMLElement {
       .form-element-input textarea {
         border: 1px solid #ccc;
       }
+
+      .form-element-input input[name="images"] {
+        width: auto;
+        gap: 0 1rem; 
+      }
+
       .avatar{
         width: 4rem;
         height: 4rem;
@@ -143,6 +179,14 @@ class UploadImageForm extends HTMLElement {
       </style>
           <div class="box">
             <div class="gallery">
+              <div class="head-close">
+                <button class="close-button">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 6L6 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M6 6L18 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </button>
+              </div>
               <div class="head-title">
                 <h1>Subir imágenes</h1>
               </div>
@@ -167,46 +211,43 @@ class UploadImageForm extends HTMLElement {
                   <input type="hidden" name="id" value="">
                   <div class="tab-contents">
                     <div class="tab-content active" data-tab="general">
-                      <div class="form-row">
-                        <div class="avatar">
-                          <p>A</p>
+                      <div class="container">
+                        <div class="form-row">
+                          <div class="avatar">
+                            <p>A</p>
+                          </div>
+                          <div class="avatar">
+                            <p>B</p>
+                          </div>
+                          <div class="avatar">
+                            <p>C</p>
+                          </div>
+                          <div class="avatar">
+                            <p>D</p>
+                          </div> 
                         </div>
-                        <div class="avatar">
-                          <p>B</p>
-                        </div>
-                        <div class="avatar">
-                          <p>C</p>
-                        </div>
-                        <div class="avatar">
-                          <p>D</p>
-                        </div>  
-                      </div>
+                      </div>  
                       <div class="side-panel">
-                        <div class="form-row">
-                          <div class="form-element">
-                            <div class="form-element-label">
-                              <label for="name">
-                                Nombre
-                              </label>
-                            </div>
-                            <div class="form-element-input">
-                              <input type="text" name="name" value="">
-                            </div>
+                        <div class="form-element">
+                          <div class="form-element-label">
+                            <label for="name">
+                              Nombre
+                            </label>
+                          </div>
+                          <div class="form-element-input">
+                            <input type="text" name="name" value="">
                           </div>
                         </div>
-                        <div class="form-row">
-                          <div class="form-element">
-                            <div class="form-element-label">
-                              <label for="description">
-                                Descripción
-                              </label>
-                            </div>
-                            <div class="form-element-input">
-                              <textarea name="description" rows="8" cols="80"></textarea>
-                            </div>
+                        <div class="form-element">
+                          <div class="form-element-label">
+                            <label for="description">
+                              Descripción
+                            </label>
+                          </div>
+                          <div class="form-element-input">
+                            <textarea name="description" rows="8" cols="80"></textarea>
                           </div>
                         </div>
-                       </div>
                       </div>
                     </div>
                     <div class="tab-content" data-tab="images">
@@ -247,13 +288,11 @@ class UploadImageForm extends HTMLElement {
 
         tabClicked.classList.add('active')
         tabActive.classList.remove('active')
-        console.log(this.shadow.querySelector(".tab-content.active"))
         this.shadow.querySelector(`.tab-content.active[data-tab="${tabActive.dataset.tab}"]`).classList.remove('active')
         this.shadow.querySelector(`.tab-content[data-tab="${tabClicked.dataset.tab}"]`).classList.add('active')
       }
     })
   }
-  
 
   handleUpload(event) {
     let boxElement = this.shadow.querySelector('.box');

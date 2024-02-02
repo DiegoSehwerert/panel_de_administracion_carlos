@@ -28,6 +28,8 @@ class Title extends HTMLElement {
         cursor: pointer;
       }
       .menu {
+        margin: 0;
+        padding: 0;
         background-color: hsl(207, 85%, 69%);
         height: 100vh;
         transition: all 0.5s;
@@ -108,6 +110,7 @@ class Title extends HTMLElement {
       </button>
     </div>
       `
+
     
 
     const menuButton = this.shadow.querySelector(".menu-button");
@@ -119,6 +122,8 @@ class Title extends HTMLElement {
         menu.classList.toggle("menu-active");
       
       })
+
+
     }
 }
 
